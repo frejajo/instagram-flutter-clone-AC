@@ -7,6 +7,7 @@ import 'package:instagram_clone_flutter/resources/firestore_methods.dart';
 import 'package:instagram_clone_flutter/utils/colors.dart';
 import 'package:instagram_clone_flutter/utils/utils.dart';
 import 'package:provider/provider.dart';
+import 'package:instagram_clone_flutter/utils/text_styles.dart';
 
 class AddPostScreen extends StatefulWidget {
   const AddPostScreen({Key? key}) : super(key: key);
@@ -25,11 +26,11 @@ class _AddPostScreenState extends State<AddPostScreen> {
       context: parentContext,
       builder: (BuildContext context) {
         return SimpleDialog(
-          title: const Text('Create a Post'),
+          title: const Text('Create a Post', style: AppTextStyles.h3),
           children: <Widget>[
             SimpleDialogOption(
                 padding: const EdgeInsets.all(20),
-                child: const Text('Take a photo'),
+                child: const Text('Take a photo', style: AppTextStyles.h3),
                 onPressed: () async {
                   Navigator.pop(context);
                   Uint8List file = await pickImage(ImageSource.camera);
@@ -39,7 +40,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                 }),
             SimpleDialogOption(
                 padding: const EdgeInsets.all(20),
-                child: const Text('Choose from Gallery'),
+                child: const Text('Choose from Gallery', style: AppTextStyles.h3),
                 onPressed: () async {
                   Navigator.of(context).pop();
                   Uint8List file = await pickImage(ImageSource.gallery);
@@ -49,7 +50,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                 }),
             SimpleDialogOption(
               padding: const EdgeInsets.all(20),
-              child: const Text("Cancel"),
+              child: const Text('Cancel', style: AppTextStyles.h3),
               onPressed: () {
                 Navigator.pop(context);
               },
@@ -135,6 +136,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
               ),
               title: const Text(
                 'Post to',
+                style: AppTextStyles.h3,
               ),
               centerTitle: false,
               actions: <Widget>[
@@ -146,6 +148,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                   ),
                   child: const Text(
                     "Post",
+                    //important styling, didn't mess w this
                     style: TextStyle(
                         color: Colors.blueAccent,
                         fontWeight: FontWeight.bold,
@@ -175,6 +178,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                       child: TextField(
                         controller: _descriptionController,
                         decoration: const InputDecoration(
+                          //edit in input text file
                             hintText: "Write a caption...",
                             border: InputBorder.none),
                         maxLines: 8,
