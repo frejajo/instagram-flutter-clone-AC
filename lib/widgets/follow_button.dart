@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone_flutter/utils/text_styles.dart';
 
 class FollowButton extends StatelessWidget {
   final Function()? function;
@@ -34,10 +35,7 @@ class FollowButton extends StatelessWidget {
           height: 27,
           child: Text(
             text,
-            style: TextStyle(
-              color: textColor,
-              fontWeight: FontWeight.bold,
-            ),
+            style: AppTextStyles.h2,
           ),
         ),
       ),
