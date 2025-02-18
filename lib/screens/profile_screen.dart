@@ -7,6 +7,7 @@ import 'package:instagram_clone_flutter/screens/login_screen.dart';
 import 'package:instagram_clone_flutter/utils/colors.dart';
 import 'package:instagram_clone_flutter/utils/utils.dart';
 import 'package:instagram_clone_flutter/widgets/follow_button.dart';
+import 'package:instagram_clone_flutter/utils/text_styles.dart';
 
 class ProfileScreen extends StatefulWidget {
   final String uid;
